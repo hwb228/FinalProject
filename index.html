@@ -27,47 +27,47 @@ div#pan{
 	display: inline-block;
 }
 button#play{
-	background:url(Pics/Play.png) no-repeat;
+	background:url(Play.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteDrums{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteBass{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteGtr{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteLGtr{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteDrumVerb{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteBassVerb{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteGtrVerb{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
 button#MuteLGtrVerb{
-	background:url(Pics/Unmute.png) no-repeat;
+	background:url(Unmute.png) no-repeat;
 	width: 23px;
 	height: 20px;
 }
@@ -80,47 +80,47 @@ input#TrackScroller{
 	
 }
 button#SoloDrums{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloDrumVerb{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloBass{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloBassVerb{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloGtr{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloGtrVerb{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloLGtr{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#SoloLGtrVerb{
-	background:url(Pics/UnSolo.png);
+	background:url(UnSolo.png);
 	width: 23px;
 	height: 20px;
 }
 button#loop{
-	background:url(Pics/NoLoop.png);
+	background:url(NoLoop.png);
 	width: 25px;
 	height: 22px;
 	
@@ -296,7 +296,7 @@ div#VerbFader{
 	var LgtrVerbGainSetting = 0;
 
 	var drumRequest = new XMLHttpRequest();
-	drumRequest.open('GET', 'Audio/Drums.mp3', true);
+	drumRequest.open('GET', 'Drums.mp3', true);
 	drumRequest.responseType = 'arraybuffer';
 	drumRequest.onload = function() {
 		context.decodeAudioData(drumRequest.response, function(theDrumBuffer) {
@@ -306,7 +306,7 @@ div#VerbFader{
 	drumRequest.send();
 
 	var bassRequest = new XMLHttpRequest();
-	bassRequest.open('GET', 'Audio/Bass.mp3', true);
+	bassRequest.open('GET', 'Bass.mp3', true);
 	bassRequest.responseType = 'arraybuffer';
 	bassRequest.onload = function() {
 		context.decodeAudioData(bassRequest.response, function(theBassBuffer) {
@@ -316,7 +316,7 @@ div#VerbFader{
 	bassRequest.send();
 
 	var gtrRequest = new XMLHttpRequest();
-	gtrRequest.open('GET', 'Audio/Guitar1.mp3', true);
+	gtrRequest.open('GET', 'Guitar1.mp3', true);
 	gtrRequest.responseType = 'arraybuffer';
 	gtrRequest.onload = function() {
 		context.decodeAudioData(gtrRequest.response, function(theGtrBuffer) {
@@ -326,7 +326,7 @@ div#VerbFader{
 	gtrRequest.send();
 
 	var LgtrRequest = new XMLHttpRequest();
-	LgtrRequest.open('GET', 'Audio/Guitar2.mp3', true);
+	LgtrRequest.open('GET', 'Guitar2.mp3', true);
 	LgtrRequest.responseType = 'arraybuffer';
 	LgtrRequest.onload = function() {
 		context.decodeAudioData(LgtrRequest.response, function(theLGtrBuffer) {
@@ -336,7 +336,7 @@ div#VerbFader{
 	LgtrRequest.send();
 
 	var verbRequest = new XMLHttpRequest();
-	verbRequest.open('GET', 'Audio/IR.mp3', true);
+	verbRequest.open('GET', 'IR.mp3', true);
 	verbRequest.responseType = 'arraybuffer';
 	verbRequest.onload = function() {
 		context.decodeAudioData(verbRequest.response, function(theVerbBuffer) {
@@ -349,7 +349,7 @@ function playSound() {
 	if (going == false) {
 		context.resume();
 		going = true;
-		play.style.background = "url(Pics/Pause.png) no-repeat";
+		play.style.background = "url(Pause.png) no-repeat";
 		startTime = context.currentTime;
 		masterGain = context.createGain();
 		masterGain.connect(context.destination);
@@ -502,7 +502,7 @@ function playSound() {
 
 		}
 	} else if (going == true) {
-		play.style.background = "url(Pics/Play.png) no-repeat";	
+		play.style.background = "url(Play.png) no-repeat";	
 		drumSource.stop(0);
 		bassSource.stop(0);
 		gtrSource.stop(0);
@@ -955,90 +955,90 @@ function playSound() {
 	
 	function MuteDrums() {
 		if (drumsMuted == true) {
-			muteDrums.style.background = "url(Pics/UnMute.png) no-repeat";
+			muteDrums.style.background = "url(UnMute.png) no-repeat";
 			drumsMuted = false;
 			drumGain.gain.value = drumGainSetting;
 		} else if (drumsMuted == false) {
-			muteDrums.style.background = "url(Pics/Mute.png) no-repeat";
+			muteDrums.style.background = "url(Mute.png) no-repeat";
 			drumsMuted = true;
 			drumGain.gain.value = 0;
-			muteDrums.style.background = "url(Pics/Mute.png) no-repeat";
+			muteDrums.style.background = "url(Mute.png) no-repeat";
 			drumsMuted = true;
 		}
 	}
 	function MuteBass() {
 		if (bassMuted == true) {
-		muteBass.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteBass.style.background = "url(UnMute.png) no-repeat";
 		bassMuted = false;
 		bassGain.gain.value = bassGainSetting;
 		} else if (bassMuted == false) {
-		muteBass.style.background = "url(Pics/Mute.png) no-repeat";
+		muteBass.style.background = "url(Mute.png) no-repeat";
 		bassMuted = true;
 		bassGain.gain.value = 0;
 		}
 	}
 	function MuteGtr() {
 		if (gtrMuted == true) {
-		muteGtr.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteGtr.style.background = "url(UnMute.png) no-repeat";
 		gtrMuted = false;
 		gtrGain.gain.value = gtrGainSetting;
 		} else if (gtrMuted == false) {
-		muteGtr.style.background = "url(Pics/Mute.png) no-repeat";
+		muteGtr.style.background = "url(Mute.png) no-repeat";
 		gtrMuted = true;
 		gtrGain.gain.value = 0;
 		}
 	}
 	function MuteLGtr() {
 		if (LgtrMuted == true) {
-		muteLGtr.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteLGtr.style.background = "url(UnMute.png) no-repeat";
 		LgtrMuted = false;
 		LgtrGain.gain.value = LgtrGainSetting;
 		} else if (LgtrMuted == false) {
-		muteLGtr.style.background = "url(Pics/Mute.png) no-repeat";
+		muteLGtr.style.background = "url(Mute.png) no-repeat";
 		LgtrMuted = true;
 		LgtrGain.gain.value = 0;
 		}
 	}
 	function MuteDrumVerb() {
 		if (drumVerbMuted == true) {
-			muteDrumVerb.style.background = "url(Pics/UnMute.png) no-repeat";
+			muteDrumVerb.style.background = "url(UnMute.png) no-repeat";
 			drumVerbMuted = false;
 			drumVerbGain.gain.value = drumVerbGainSetting;
 		} else if (drumVerbMuted == false) {
-			muteDrumVerb.style.background = "url(Pics/Mute.png) no-repeat";
+			muteDrumVerb.style.background = "url(Mute.png) no-repeat";
 			drumVerbMuted = true;
 			drumVerbGain.gain.value = 0;
 		}
 	}
 	function MuteBassVerb() {
 		if (bassVerbMuted == true) {
-		muteBassVerb.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteBassVerb.style.background = "url(UnMute.png) no-repeat";
 		bassVerbMuted = false;
 		bassVerbGain.gain.value = bassVerbGainSetting;
 		} else if (bassVerbMuted == false) {
-		muteBassVerb.style.background = "url(Pics/Mute.png) no-repeat";
+		muteBassVerb.style.background = "url(Mute.png) no-repeat";
 		bassVerbMuted = true;
 		bassVerbGain.gain.value = 0;
 		}
 	}
 	function MuteGtrVerb() {
 		if (gtrVerbMuted == true) {
-		muteGtrVerb.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteGtrVerb.style.background = "url(UnMute.png) no-repeat";
 		gtrVerbMuted = false;
 		gtrVerbGain.gain.value = gtrVerbGainSetting;
 		} else if (gtrVerbMuted == false) {
-		muteGtrVerb.style.background = "url(Pics/Mute.png) no-repeat";
+		muteGtrVerb.style.background = "url(Mute.png) no-repeat";
 		gtrVerbMuted = true;
 		gtrVerbGain.gain.value = 0;
 		}
 	}
 	function MuteLGtrVerb() {
 		if (LgtrVerbMuted == true) {
-		muteLGtrVerb.style.background = "url(Pics/UnMute.png) no-repeat";
+		muteLGtrVerb.style.background = "url(UnMute.png) no-repeat";
 		LgtrVerbMuted = false;
 		LgtrVerbGain.gain.value = LgtrVerbGainSetting;
 		} else if (LgtrVerbMuted == false) {
-		muteLGtrVerb.style.background = "url(Pics/Mute.png) no-repeat";
+		muteLGtrVerb.style.background = "url(Mute.png) no-repeat";
 		LgtrVerbMuted = true;
 		LgtrVerbGain.gain.value = 0;
 		}
@@ -1047,7 +1047,7 @@ function playSound() {
 	function DrumSolo() {
 		if (drumsSoloed == false) {
 			drumsSoloed = true;
-			SoloDrums.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloDrums.style.background = "url(Solo.png) no-repeat";
 			if (drumsMuted == false) {
 				drumGain.gain.value = drumGainSetting;
 			}
@@ -1075,7 +1075,7 @@ function playSound() {
 		
 		} else if (drumsSoloed == true) {
 			drumsSoloed = false;
-			SoloDrums.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloDrums.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumVerbMuted == false) {
 					drumVerbGain.gain.value = drumVerbGainSetting;
@@ -1108,7 +1108,7 @@ function playSound() {
 	function BassSolo() {
 		if (bassSoloed == false) {
 			bassSoloed = true;
-			SoloBass.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloBass.style.background = "url(Solo.png) no-repeat";
 			if (bassMuted == false) {
 				bassGain.gain.value = bassGainSetting;
 			}
@@ -1136,7 +1136,7 @@ function playSound() {
 		
 		} else if (bassSoloed == true) {
 			bassSoloed = false;
-			SoloBass.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloBass.style.background = "url(UnSolo.png) no-repeat";
 			if (drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1169,7 +1169,7 @@ function playSound() {
 	function GtrSolo() {
 		if (gtrSoloed == false) {
 			gtrSoloed = true;
-			SoloGtr.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloGtr.style.background = "url(Solo.png) no-repeat";
 			if (gtrMuted == false) {
 				gtrGain.gain.value = gtrGainSetting;
 			}
@@ -1197,7 +1197,7 @@ function playSound() {
 		
 		} else if (gtrSoloed == true) {
 			gtrSoloed = false;
-			SoloGtr.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloGtr.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1231,7 +1231,7 @@ function playSound() {
 	function LGtrSolo() {
 		if (LgtrSoloed == false) {
 			LgtrSoloed = true;
-			SoloLGtr.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloLGtr.style.background = "url(Solo.png) no-repeat";
 			if (LgtrMuted == false) {
 				LgtrGain.gain.value = LgtrGainSetting;
 			}
@@ -1259,7 +1259,7 @@ function playSound() {
 		
 		} else if (LgtrSoloed == true) {
 			LgtrSoloed = false;
-			SoloLGtr.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloLGtr.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1292,7 +1292,7 @@ function playSound() {
 	function DrumVerbSolo() {
 		if (drumVerbSoloed == false) {
 			drumVerbSoloed = true;
-			SoloDrumVerb.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloDrumVerb.style.background = "url(Solo.png) no-repeat";
 			if (drumVerbMuted == false) {
 				drumVerbGain.gain.value = drumVerbGainSetting;
 			}
@@ -1320,7 +1320,7 @@ function playSound() {
 		
 		} else if (drumVerbSoloed == true) {
 			drumVerbSoloed = false;
-			SoloDrumVerb.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloDrumVerb.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1354,7 +1354,7 @@ function playSound() {
 	function BassVerbSolo() {
 		if (bassVerbSoloed == false) {
 			bassVerbSoloed = true;
-			SoloBassVerb.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloBassVerb.style.background = "url(Solo.png) no-repeat";
 			if (bassVerbMuted == false) {
 				bassVerbGain.gain.value = bassVerbGainSetting;
 			}
@@ -1382,7 +1382,7 @@ function playSound() {
 		
 		} else if (bassVerbSoloed == true) {
 			bassVerbSoloed = false;
-			SoloBassVerb.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloBassVerb.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1416,7 +1416,7 @@ function playSound() {
 	function GtrVerbSolo() {
 		if (gtrVerbSoloed == false) {
 			gtrVerbSoloed = true;
-			SoloGtrVerb.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloGtrVerb.style.background = "url(Solo.png) no-repeat";
 			if (gtrVerbMuted == false) {
 				gtrVerbGain.gain.value = gtrVerbGainSetting;
 			}
@@ -1444,7 +1444,7 @@ function playSound() {
 		
 		} else if (gtrVerbSoloed == true) {
 			gtrVerbSoloed = false;
-			SoloGtrVerb.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloGtrVerb.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1478,7 +1478,7 @@ function playSound() {
 	function LGtrVerbSolo() {
 		if (LgtrVerbSoloed == false) {
 			LgtrVerbSoloed = true;
-			SoloLGtrVerb.style.background = "url(Pics/Solo.png) no-repeat";
+			SoloLGtrVerb.style.background = "url(Solo.png) no-repeat";
 			if (LgtrVerbMuted == false) {
 				LgtrVerbGain.gain.value = LgtrVerbGainSetting;
 			}
@@ -1506,7 +1506,7 @@ function playSound() {
 		
 		} else if (LgtrVerbSoloed == true) {
 			LgtrVerbSoloed = false;
-			SoloLGtrVerb.style.background = "url(Pics/UnSolo.png) no-repeat";
+			SoloLGtrVerb.style.background = "url(UnSolo.png) no-repeat";
 			if (bassSoloed == false && drumsSoloed == false && gtrSoloed == false  && LgtrSoloed == false && drumVerbSoloed == false && bassVerbSoloed == false && gtrVerbSoloed == false && LgtrVerbSoloed == false)  {
 				if (drumsMuted == false) {
 					drumGain.gain.value = drumGainSetting;
@@ -1545,14 +1545,14 @@ function playSound() {
 		if (going == true) {
 			if (looping == false) {
 				looping = true;
-				loop.style.background = "url(Pics/Loop.png) no-repeat";
+				loop.style.background = "url(Loop.png) no-repeat";
 				drumSource.loop = true;
 				bassSource.loop = true;
 				gtrSource.loop = true;
 				LgtrSource.loop = true;
 			} else if (looping == true) {
 				looping = false;
-				loop.style.background = "url(Pics/NoLoop.png) no-repeat";
+				loop.style.background = "url(NoLoop.png) no-repeat";
 				drumSource.loop = false;
 				bassSource.loop = false;
 				gtrSource.loop = false;
@@ -1561,10 +1561,10 @@ function playSound() {
 		} else if (going == false) {
 			if (looping == false) {
 				looping = true; 
-				loop.style.background = "url(Pics/Loop.png) no-repeat";
+				loop.style.background = "url(Loop.png) no-repeat";
 			} else if (looping == true) {
 				looping = false;
-				loop.style.background = "url(Pics/NoLoop.png) no-repeat";
+				loop.style.background = "url(NoLoop.png) no-repeat";
 			}
 		}
 	}
